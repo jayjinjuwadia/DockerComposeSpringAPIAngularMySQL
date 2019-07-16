@@ -1,0 +1,24 @@
+FROM mysql
+
+ENV MYSQL_ROOT_PASSWORD=password MYSQL_DATABASE=dockerAngularSpringDatabase MYSQL_USER=user MYSQL_PASSWORD=password
+
+#COPY . /var/lib/mysql
+
+VOLUME /var/lib/mysql
+
+EXPOSE 3306
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
