@@ -26,7 +26,7 @@ node {
 	docker container create --name angularcontainer --network frontend angimage
 	'''
     }
-    stage('container startup') {
+    stage('Container startup') {
 	sh '''
 	docker container run databasecontainer springcontainer angularcontainer
 	'''
