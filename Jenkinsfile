@@ -29,7 +29,7 @@ node {
     }
     stage('Container startup') {
 	sh '''
-	sudo docker container run databasecontainer springcontainer angularcontainer
+	sudo docker container start databasecontainer springcontainer angularcontainer
 	'''
     }
 }
