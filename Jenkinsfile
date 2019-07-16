@@ -5,6 +5,7 @@ node {
 	sh 'sudo docker network create frontend'
     }
     stage('Database creation') {
+	sh 'sudo chown root:jenkins /run/docker.sock'
 	def dockerfile1 = 'DatabaseDockerfile'
         def dockerim1 = docker.build("dbimage", "-f ${dockerfile1} .")
 	sh '''
