@@ -1,5 +1,19 @@
 node {
-    checkout scm
+
+   checkout scm
+/* stage('building spring and ang') {
+	sh 'mvn -f ./Spring/pom.xml'
+	sh '''
+	pushd ./Angular/
+	ng build --prod
+	popd
+	'''
+    } */
+ /* stage('previous pipeline cleanup') {
+	sh '''
+	sudo docker container stop databasecontainer springcontainer angularcontainer && sudo docker container rm databasecontainer springcontainer angularcontainer && sudo docker volume prune -f && docker network rm frontend backend && docker image rm -f dbimage springimage angimage 
+	'''
+    } */
     stage('Network Creation') {
 	sh 'sudo docker network create backend' 
 	sh 'sudo docker network create frontend'
